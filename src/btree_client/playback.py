@@ -2,8 +2,12 @@ import logging
 import time
 
 import simpleaudio
-from bluepy.btle import ADDR_TYPE_PUBLIC, Peripheral
 
+try:
+    from bluepy.btle import ADDR_TYPE_PUBLIC, Peripheral
+except Exception:
+    pass
+    
 logger = logging.getLogger(__name__)
 
 AUDIO_START_BUFFERING = 0  # noqa
